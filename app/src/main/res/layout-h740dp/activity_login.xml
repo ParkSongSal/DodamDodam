@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mainColor"
+
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -21,10 +22,10 @@
 
         <ImageView
             android:id="@+id/logoImg"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:src="@drawable/logo" />
 
         <TextView
@@ -32,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="30dp"
             android:text="도담도담"
             android:textColor="@color/mainTextBoldColor"
             android:textSize="25sp" />
@@ -43,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="30dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/idEditText"
@@ -54,7 +55,7 @@
                 android:hint="아이디"
                 android:inputType="text"
                 android:textColorHint="@color/mainTextColor"
-                android:textSize="17sp"/>
+                android:textSize="20sp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/idInputLayout"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
             app:passwordToggleEnabled="true">
 
@@ -76,7 +77,7 @@
                 android:hint="비밀번호"
                 android:inputType="textPassword"
                 android:textColorHint="@color/mainTextColor"
-                android:textSize="17sp" />
+                android:textSize="20sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

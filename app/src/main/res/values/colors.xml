@@ -19,7 +19,7 @@
 
 
     <!--로딩화면 배경색-->
-    <color name="splash_bg">#fffff7</color>
+    <color name="splash_bg">#ffffff</color>
 
     <!--메인텍스트(진한 회색)-->
     <color name="mainTextBoldColor">#4D4D4D</color>
