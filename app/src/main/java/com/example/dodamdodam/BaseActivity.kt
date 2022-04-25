@@ -16,6 +16,7 @@ import retrofit2.Retrofit
 abstract class BaseActivity : AppCompatActivity() {
 
     var validate = false
+    var loginId = ""
 
     lateinit var coxt : Context
 

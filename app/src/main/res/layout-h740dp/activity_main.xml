@@ -11,7 +11,7 @@
         android:id="@+id/appLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:text="도담도담"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="37sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,8 +32,8 @@
 
         <ImageView
             android:id="@+id/logoutImg"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:onClick="mOnClick"
             android:src="@drawable/logo"
@@ -81,8 +81,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view1"
-            android:layout_width="280dp"
-            android:layout_height="80dp"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             app:cardCornerRadius="5dp"
             tools:ignore="MissingConstraints">
@@ -158,18 +158,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:layout_marginTop="15dp"
         android:onClick="mOnClick"
-        app:layout_constraintTop_toBottomOf="@id/rl"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl">
 
         <LinearLayout
             android:id="@+id/intro_ll"
             android:layout_width="150dp"
-            android:layout_height="120dp"
+            android:layout_height="150dp"
             android:background="@drawable/border_card"
             android:onClick="mOnClick"
             android:orientation="vertical">
@@ -199,7 +199,7 @@
         <LinearLayout
             android:id="@+id/notice_ll"
             android:layout_width="150dp"
-            android:layout_height="120dp"
+            android:layout_height="150dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/border_card"
@@ -236,18 +236,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:layout_marginTop="10dp"
         android:onClick="mOnClick"
-        app:layout_constraintTop_toBottomOf="@id/ll1"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll1">
 
         <LinearLayout
             android:id="@+id/enter_ll"
             android:layout_width="150dp"
-            android:layout_height="120dp"
+            android:layout_height="150dp"
             android:background="@drawable/border_card"
             android:onClick="mOnClick"
             android:orientation="vertical">
@@ -271,13 +271,14 @@
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_baseline_access_time_24" />
+                android:src="@drawable/ic_baseline_access_time_24"
+                tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/leave_ll"
             android:layout_width="150dp"
-            android:layout_height="120dp"
+            android:layout_height="150dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/border_card"
@@ -313,18 +314,18 @@
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:layout_marginTop="10dp"
         android:onClick="mOnClick"
-        app:layout_constraintTop_toBottomOf="@id/ll2"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll2">
 
         <LinearLayout
             android:id="@+id/youtube_ll"
             android:layout_width="150dp"
-            android:layout_height="120dp"
+            android:layout_height="150dp"
             android:background="@drawable/border_card"
             android:onClick="mOnClick"
             android:orientation="vertical">
@@ -354,7 +355,7 @@
         <LinearLayout
             android:id="@+id/visit_ll"
             android:layout_width="150dp"
-            android:layout_height="120dp"
+            android:layout_height="150dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/border_card"
