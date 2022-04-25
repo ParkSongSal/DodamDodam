@@ -1,9 +1,9 @@
 package com.example.dodamdodam.Retrofit2
 
+import com.example.dodamdodam.Visit.ResultVisit
+import okhttp3.RequestBody
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface userApi {
 
@@ -32,16 +32,16 @@ interface userApi {
                      @Query("userAuth") userAuth : String) : Call<ResultModel>
 
 
-    /* 메인 아기 정보 *//*
+    /* 메인 아기 정보 */
     @Multipart
     @POST("mainBabyInfo.php")
     fun mainBabyInfo(@Part("loginId") loginId : RequestBody) : Call<List<ResultVisit>>
 
-    *//* 회원 정보 *//*
+    /* 회원 정보 */
     @Multipart
     @POST("getUserInfo.php")
     fun getUserInfo(@Part("loginId") loginId : RequestBody) : Call<List<ResultVisit>>
-*/
+
 
     /* 회원정보 수정 */
     @GET("userInfoUpdate.php")
