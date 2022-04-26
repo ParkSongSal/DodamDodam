@@ -18,10 +18,16 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".AppIntroduceModifyActivity"
+            android:name=".Introduce.OutIntroduceActivity"
             android:exported="false" />
         <activity
-            android:name=".AppIntroduceActivity"
+            android:name=".Introduce.EnterIntroduceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Introduce.AppIntroduceModifyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Introduce.AppIntroduceActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"

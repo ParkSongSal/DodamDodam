@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
+import com.example.dodamdodam.Introduce.AppIntroduceActivity
+import com.example.dodamdodam.Introduce.EnterIntroduceActivity
+import com.example.dodamdodam.Introduce.OutIntroduceActivity
 import com.example.dodamdodam.Visit.ResultVisit
 import com.example.dodamdodam.utils.BackPressedForFinish
 import com.example.dodamdodam.utils.Common
@@ -105,21 +108,22 @@ class MainActivity : BaseActivity() {
                 Common.intentCommon(this@MainActivity, AppIntroduceActivity::class.java)
             }
 
-            /* 입원 안내문 소개  *//*
+            /* 입원 안내문 소개  */
+
             R.id.enter_ll,
             R.id.enterTxt,
             R.id.enter_img -> {
                 Common.intentCommon(this@MainActivity, EnterIntroduceActivity::class.java)
             }
 
-            *//* 퇴원 안내문 소개*//*
+            /* 퇴원 안내문 소개*/
             R.id.leave_ll,
             R.id.leave_txt,
             R.id.leave_img -> {
                 Common.intentCommon(this@MainActivity, OutIntroduceActivity::class.java)
             }
 
-            *//* 설정 *//*
+            /* 설정 *//*
             R.id.logoutImg -> {
                 Common.intentCommon(this@MainActivity, SettingActivity::class.java)
                 finish()

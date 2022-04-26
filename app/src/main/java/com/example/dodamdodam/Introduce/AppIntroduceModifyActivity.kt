@@ -1,12 +1,14 @@
-package com.example.dodamdodam
+package com.example.dodamdodam.Introduce
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
+import com.example.dodamdodam.BaseActivity
+import com.example.dodamdodam.MainActivity
+import com.example.dodamdodam.R
 import com.example.dodamdodam.Retrofit2.ResultModel
 import com.example.dodamdodam.utils.Common
 import okhttp3.MultipartBody

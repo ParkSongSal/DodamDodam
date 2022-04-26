@@ -19,8 +19,10 @@
         <entry key="app/src/main/res/layout-w936dp/item_toolbar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_app_introduce.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_app_introduce_modify.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_enter_introduce.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_out_introduce.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.14537037037037037" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13518518518518519" />
         <entry key="app/src/main/res/layout/dialog_progress.xml" value="0.1" />

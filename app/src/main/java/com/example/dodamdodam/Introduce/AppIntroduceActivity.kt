@@ -1,18 +1,18 @@
-package com.example.dodamdodam
+package com.example.dodamdodam.Introduce
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import com.example.dodamdodam.BaseActivity
+import com.example.dodamdodam.R
 
 class AppIntroduceActivity : BaseActivity() {
 
 
 
-    private val modifyBtn: Button by lazy {
-        findViewById<Button>(R.id.modifyBtn)
-    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_app_introduce)

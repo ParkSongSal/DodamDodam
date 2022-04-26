@@ -7,6 +7,7 @@ import android.content.SharedPreferences
 import android.os.Handler
 import android.util.Log
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -50,16 +51,20 @@ abstract class BaseActivity : AppCompatActivity() {
         findViewById<Toolbar>(R.id.toolbar)
     }
 
+    val modifyBtn: Button by lazy {
+        findViewById<Button>(R.id.modifyBtn)
+    }
     val appIntroTxt: TextView by lazy {
         findViewById<TextView>(R.id.appIntroTxt)
     }
 
-    /*val enterIntroTxt: TextView by lazy {
+    val enterIntroTxt: TextView by lazy {
         findViewById<TextView>(R.id.enterIntroTxt)
     }
+
     val outIntroTxt: TextView by lazy {
         findViewById<TextView>(R.id.outIntroTxt)
-    }*/
+    }
     fun init(context: Context) {
 
         coxt = context
@@ -146,8 +151,8 @@ abstract class BaseActivity : AppCompatActivity() {
 
                     when (boardGb) {
                         "0" -> appIntroTxt.text = result[i].boardContent
-                        //"1" -> enterIntroTxt.text = result[i].boardContent
-                        //"2" -> outIntroTxt.text = result[i].boardContent
+                        "1" -> enterIntroTxt.text = result[i].boardContent
+                        "2" -> outIntroTxt.text = result[i].boardContent
                     }
                 }
 
