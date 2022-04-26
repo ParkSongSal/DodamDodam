@@ -59,7 +59,7 @@ class AppIntroduceModifyActivity : BaseActivity() {
                 //board_gubun.text = "앱 소개"
                 intent = Intent(this@AppIntroduceModifyActivity, AppIntroduceActivity::class.java)
             }
-            /*"1" -> {
+            "1" -> {
                 toolbar.title = "입원안내문 작성"
                 //board_gubun.text = "입원안내문"
                 intent = Intent(this@AppIntroduceModifyActivity, EnterIntroduceActivity::class.java)
@@ -68,7 +68,7 @@ class AppIntroduceModifyActivity : BaseActivity() {
                 toolbar.title = "퇴원안내문 작성"
                 //board_gubun.text = "퇴원안내문"
                 intent = Intent(this@AppIntroduceModifyActivity, OutIntroduceActivity::class.java)
-            }*/
+            }
         }
 
 
