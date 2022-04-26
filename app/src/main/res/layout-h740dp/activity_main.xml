@@ -171,7 +171,7 @@
         app:layout_constraintTop_toBottomOf="@id/rl">
 
         <LinearLayout
-            android:id="@+id/intro_ll"
+            android:id="@+id/visit_ll"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:background="@drawable/border_card"
@@ -179,25 +179,25 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/appIntro"
+                android:id="@+id/visit_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
                 android:onClick="mOnClick"
-                android:text="앱소개"
+                android:text="면회"
                 android:textColor="@color/mainTextColor"
                 android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/intro_img"
+                android:id="@+id/visit_img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_baseline_access_time_24" />
+                android:src="@drawable/ic_person_black_24dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -357,7 +357,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/visit_ll"
+            android:id="@+id/setting_ll"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginStart="20dp"
@@ -367,18 +367,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/visit_txt"
+                android:id="@+id/setting_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
                 android:onClick="mOnClick"
-                android:text="면회"
+                android:text="설정"
                 android:textColor="@color/mainTextColor"
                 android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/visit_img"
+                android:id="@+id/setting_img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"

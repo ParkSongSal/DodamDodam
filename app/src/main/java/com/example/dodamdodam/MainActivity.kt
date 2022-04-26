@@ -1,5 +1,7 @@
 package com.example.dodamdodam
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
@@ -103,11 +105,11 @@ class MainActivity : BaseActivity() {
         when (view.id) {
 
             /* 앱 소개 */
-            R.id.intro_ll,
+            /*R.id.intro_ll,
             R.id.appIntro,
             R.id.intro_img -> {
                 Common.intentCommon(this@MainActivity, AppIntroduceActivity::class.java)
-            }
+            }*/
 
             /* 입원 안내문 소개  */
 
@@ -124,7 +126,27 @@ class MainActivity : BaseActivity() {
                 Common.intentCommon(this@MainActivity, OutIntroduceActivity::class.java)
             }
 
-            /* 설정 *//*
+            /* 유튜브 소개*/
+            R.id.youtube_ll,
+            R.id.youtubeTxt,
+            R.id.youtubeImg -> {
+
+                if(loginId != "admin"){
+                    startActivity(Intent(Intent.ACTION_VIEW)
+                        .setData(Uri.parse("https://www.youtube.com/watch?v=g2sSCktflX8"))
+                        .setPackage("com.google.android.youtube"))
+                }else{
+                    Common.intentCommon(this@MainActivity, OutIntroduceActivity::class.java)
+                }
+            }
+
+            /* 설정 */
+            R.id.setting_ll,
+            R.id.setting_txt,
+            R.id.setting_img -> {
+                Common.intentCommon(this@MainActivity, SettingActivity::class.java)
+            }
+            /*
             R.id.logoutImg -> {
                 Common.intentCommon(this@MainActivity, SettingActivity::class.java)
                 finish()
