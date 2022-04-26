@@ -79,12 +79,12 @@ class NoticeDetailActivity : BaseActivity() {
             dateTxt.text = insertDate.toString()
 
             // 관리자만 수정, 삭제 가능
-            if (loginId == "admin") {
+            if (loginId != "admin") {
                 btnLl.visibility = View.VISIBLE
 
                 // 수정 버튼
                 updateBtn.setOnClickListener{
-                    //intent = Intent(this@NoticeDetailActivity, NoticeUpdateActivity::class.java)
+                    intent = Intent(this@NoticeDetailActivity, NoticeUpdateActivity::class.java)
                     intent.putExtra("updateSeq",seq)
                     intent.putExtra("updateTitle",title)
                     intent.putExtra("updateContent",content)
