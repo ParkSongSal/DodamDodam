@@ -102,7 +102,7 @@ class MainActivity : BaseActivity() {
             R.id.intro_ll,
             R.id.appIntro,
             R.id.intro_img -> {
-                //Common.intentCommon(this@MainActivity, AppIntroduceActivity::class.java)
+                Common.intentCommon(this@MainActivity, AppIntroduceActivity::class.java)
             }
 
             /* 입원 안내문 소개  *//*

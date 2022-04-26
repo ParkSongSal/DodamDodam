@@ -20,9 +20,7 @@ class RegisterActivity : BaseActivity() {
     private var passwordOk = true
     private var babyRelation = "D"
 
-    private val toolbar: Toolbar by lazy {
-        findViewById<Toolbar>(R.id.toolbar)
-    }
+
 
 
     private val userIdEdit: EditText by lazy {
