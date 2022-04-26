@@ -18,6 +18,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Notice.NoticeUpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".Notice.NoticeDetailActivity"
             android:exported="false" />
         <activity
