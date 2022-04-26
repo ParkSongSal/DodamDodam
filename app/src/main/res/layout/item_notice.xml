@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0.9"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/titleTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:paddingRight="10dp"
+                android:gravity="start"
+                android:text="제목입니다."
+                android:textColor="@color/mainTextBoldColor"
+                android:layout_gravity="center"
+                android:textSize="21sp"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:layout_marginLeft="10dp"
+                android:paddingEnd="10dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+
+                <TextView
+                    android:id="@+id/userTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="bottom"
+                    android:text="관리자"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="10dp" />
+
+                <TextView
+                    android:id="@+id/dateTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="bottom"
+                    android:text="2019-11-25"
+                    android:textColor="@color/mainAccentColor"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp" />
+
+
+
+
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:textColor="#FF5722"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:drawableBottom="@drawable/ic_lock_black_24dp"/>-->
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

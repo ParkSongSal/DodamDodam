@@ -18,6 +18,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Notice.NoticeInsertActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Notice.NoticeListActivity"
+            android:exported="false" />
+        <activity
             android:name=".Introduce.OutIntroduceActivity"
             android:exported="false" />
         <activity

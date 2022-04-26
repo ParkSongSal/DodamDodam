@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.example.dodamdodam.Introduce.AppIntroduceActivity
 import com.example.dodamdodam.Introduce.EnterIntroduceActivity
 import com.example.dodamdodam.Introduce.OutIntroduceActivity
+import com.example.dodamdodam.Notice.NoticeListActivity
 import com.example.dodamdodam.Visit.ResultVisit
 import com.example.dodamdodam.utils.BackPressedForFinish
 import com.example.dodamdodam.utils.Common
@@ -129,13 +130,15 @@ class MainActivity : BaseActivity() {
                 finish()
             }
 
-            *//* 공지사항 *//*
+            */
+            /* 공지사항 */
+
             R.id.notice_ll,
             R.id.notice_txt,
             R.id.notice_img -> {
                 Common.intentCommon(this@MainActivity, NoticeListActivity::class.java)
             }
-            *//* 면회 *//*
+            /* 면회 *//*
             R.id.visit_ll,
             R.id.visit_txt,
             R.id.visit_img -> {
