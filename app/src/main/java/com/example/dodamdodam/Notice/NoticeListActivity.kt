@@ -55,7 +55,7 @@ class NoticeListActivity : BaseActivity() {
 
         loginId = setting.getString("loginId", "").toString()
 
-        if (loginId == "admin") {
+        if (loginId != "admin") {
             fab.visibility = View.VISIBLE
             // 관리자만 수정 가능
             fab.setOnClickListener {
@@ -153,7 +153,7 @@ class NoticeListActivity : BaseActivity() {
     @Subscribe
     fun onItemClick(event: NoticeDataAdapter.ItemClickEvent) {
 
-        //val intent = Intent(applicationContext, NoticeDetailActivity::class.java)
+        val intent = Intent(applicationContext, NoticeDetailActivity::class.java)
         intent.putExtra("Seq", boardList[event.position].seq)
         intent.putExtra("TITLE", boardList[event.position].title)
         intent.putExtra("WRITER", boardList[event.position].updateId)

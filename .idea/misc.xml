@@ -24,6 +24,7 @@
         <entry key="app/src/main/res/layout/activity_enter_introduce.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_notice_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_notice_insert.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_notice_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_out_introduce.xml" value="0.1" />
