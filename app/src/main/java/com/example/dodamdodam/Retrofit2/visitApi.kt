@@ -1,6 +1,6 @@
 package com.example.dodamdodam.Retrofit2
 
-import android.security.identity.ResultData
+import com.example.dodamdodam.Visit.ResultData
 import com.example.dodamdodam.Visit.ResultReply
 import com.example.dodamdodam.Visit.ResultVisit
 import okhttp3.MultipartBody
