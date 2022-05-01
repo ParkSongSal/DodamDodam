@@ -203,7 +203,7 @@
                         <TextView
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
-                            android:text="● 필용용품" />
+                            android:text="● 필요용품" />
 
                         <TextView
                             android:id="@+id/babyRequireItemTxt"
