@@ -11,6 +11,7 @@ import com.example.dodamdodam.Introduce.EnterIntroduceActivity
 import com.example.dodamdodam.Introduce.OutIntroduceActivity
 import com.example.dodamdodam.Notice.NoticeListActivity
 import com.example.dodamdodam.Visit.ResultVisit
+import com.example.dodamdodam.Visit.VisitAdminUserSelActivity
 import com.example.dodamdodam.utils.BackPressedForFinish
 import com.example.dodamdodam.utils.Common
 import okhttp3.MultipartBody
@@ -126,14 +127,15 @@ class MainActivity : BaseActivity() {
                 Common.intentCommon(this@MainActivity, OutIntroduceActivity::class.java)
             }
 
-            /* 유튜브 소개*/
+            /* TODO : 유튜브 소개*/
             R.id.youtube_ll,
             R.id.youtubeTxt,
             R.id.youtubeImg -> {
-
+                val a = "biSqAAG7KIw"
+                /*TODO : admin 계정 임시 조치 */
                 if(loginId != "admin"){
                     startActivity(Intent(Intent.ACTION_VIEW)
-                        .setData(Uri.parse("https://www.youtube.com/watch?v=g2sSCktflX8"))
+                        .setData(Uri.parse("https://www.youtube.com/watch?v=$a"))
                         .setPackage("com.google.android.youtube"))
                 }else{
                     Common.intentCommon(this@MainActivity, OutIntroduceActivity::class.java)
@@ -160,16 +162,17 @@ class MainActivity : BaseActivity() {
             R.id.notice_img -> {
                 Common.intentCommon(this@MainActivity, NoticeListActivity::class.java)
             }
-            /* 면회 *//*
+            /* 면회 */
             R.id.visit_ll,
             R.id.visit_txt,
             R.id.visit_img -> {
-                if ("admin" == loginId) {
+                /*TODO : admin 계정 임시 조치 */
+                if ("admin"!= loginId) {
                     Common.intentCommon(this@MainActivity, VisitAdminUserSelActivity::class.java)
                 } else {
-                    Common.intentCommon(this@MainActivity, VisitParentCalendarActivity::class.java)
+                    //Common.intentCommon(this@MainActivity, VisitParentCalendarActivity::class.java)
                 }
-            }*/
+            }
         }
     }
 

@@ -18,6 +18,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Visit.VisitAdmintoParentListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Visit.VisitAdminUserSelActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingActivity"
             android:exported="false" />
         <activity

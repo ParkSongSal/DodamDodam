@@ -34,9 +34,11 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.14537037037037037" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.14140625" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13518518518518519" />
+        <entry key="app/src/main/res/layout/activity_visit_admin_user_sel.xml" value="0.14140625" />
         <entry key="app/src/main/res/layout/dialog_progress.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_notice.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_toolbar.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_visit_user.xml" value="0.14140625" />
       </map>
     </option>
   </component>

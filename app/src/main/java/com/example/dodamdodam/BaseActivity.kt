@@ -46,6 +46,7 @@ abstract class BaseActivity : AppCompatActivity() {
     lateinit var retrofit: Retrofit
     lateinit var mUserApi: userApi
     lateinit var mBoardApi: boardApi
+    lateinit var mVisitApi: visitApi
 
     val toolbar: Toolbar by lazy {
         findViewById<Toolbar>(R.id.toolbar)
@@ -85,6 +86,7 @@ abstract class BaseActivity : AppCompatActivity() {
         retrofit = RetrofitClient.getInstance()
         mUserApi = retrofit.create(userApi::class.java)
         mBoardApi = retrofit.create(boardApi::class.java)
+        mVisitApi = retrofit.create(visitApi::class.java)
 
     }
 
