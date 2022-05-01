@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/drawable/border_edit.xml" value="0.18611111111111112" />
         <entry key="app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.18611111111111112" />
         <entry key="app/src/main/res/drawable/ic_baseline_date_range_24.xml" value="0.18611111111111112" />
+        <entry key="app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.13680555555555557" />
         <entry key="app/src/main/res/drawable/ic_create_24dp.xml" value="0.13958333333333334" />
         <entry key="app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.13958333333333334" />
         <entry key="app/src/main/res/drawable/progress_bg.xml" value="0.18611111111111112" />
@@ -34,9 +35,13 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.14537037037037037" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.14140625" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13518518518518519" />
+        <entry key="app/src/main/res/layout/activity_visit_admin_to_parent_detail.xml" value="0.14140625" />
         <entry key="app/src/main/res/layout/activity_visit_admin_user_sel.xml" value="0.14140625" />
+        <entry key="app/src/main/res/layout/activity_visit_admin_write.xml" value="0.14140625" />
+        <entry key="app/src/main/res/layout/activity_visit_adminto_parent_list.xml" value="0.125" />
         <entry key="app/src/main/res/layout/dialog_progress.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_notice.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_to_parent.xml" value="0.14140625" />
         <entry key="app/src/main/res/layout/item_toolbar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_visit_user.xml" value="0.14140625" />
       </map>

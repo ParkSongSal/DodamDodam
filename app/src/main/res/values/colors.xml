@@ -27,6 +27,9 @@
     <!--메인텍스트(회색)-->
     <color name="mainTextColor">#676d72</color>
 
+    <!--메인텍스트(회색)-->
+    <color name="mainLightTextColor">#C6C6C6</color>
+
     <!--강조 파란색-->
     <color name="mainAccentColor">#6CA9C5</color>
 
