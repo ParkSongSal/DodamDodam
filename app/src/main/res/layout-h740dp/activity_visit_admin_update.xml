@@ -18,25 +18,23 @@
             layout="@layout/item_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:background="@drawable/border_edit"
             android:orientation="vertical"
-            android:paddingStart="10dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="10dp">
-
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:paddingStart="5dp"
                 android:paddingLeft="5dp"
                 android:text="아기 체중" />
@@ -44,14 +42,14 @@
             <EditText
                 android:id="@+id/babyWeightTxt"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:background="@drawable/border_edit"
                 android:padding="6dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:paddingStart="5dp"
                 android:paddingLeft="5dp"
                 android:text="수유량" />
@@ -59,14 +57,14 @@
             <EditText
                 android:id="@+id/babyLactationTxt"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:background="@drawable/border_edit"
                 android:padding="6dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:paddingStart="5dp"
                 android:paddingLeft="5dp"
                 android:text="필요물품" />
@@ -74,7 +72,7 @@
             <EditText
                 android:id="@+id/babyRequireItemTxt"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:background="@drawable/border_edit"
                 android:padding="6dp" />
 
@@ -91,7 +89,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="80dp"
                 android:background="@drawable/border_edit"
                 android:fillViewport="true">
 
@@ -153,7 +151,7 @@
             <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/saveSpinner"
                 android:layout_width="150dp"
-                android:layout_height="35dp"
+                android:layout_height="45dp"
                 android:spinnerMode="dialog" />
 
             <LinearLayout
@@ -161,7 +159,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -204,11 +202,10 @@
 
         <Button
             android:id="@+id/updateBtn"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/ripple_ok_btn"
             android:text="수정"
             android:textColor="@color/white"
