@@ -131,7 +131,7 @@ class MainActivity : BaseActivity() {
             R.id.youtube_ll,
             R.id.youtubeTxt,
             R.id.youtubeImg -> {
-                val a = "biSqAAG7KIw"
+                val a = "0_ppWFD1ba0"
                 /*TODO : admin 계정 임시 조치 */
                 if(loginId != "admin"){
                     startActivity(Intent(Intent.ACTION_VIEW)

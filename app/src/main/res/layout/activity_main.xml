@@ -36,7 +36,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:onClick="mOnClick"
-            android:src="@drawable/logo"
+            android:src="@drawable/logo_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/appNameTxt"
             app:layout_constraintTop_toTopOf="parent" />
