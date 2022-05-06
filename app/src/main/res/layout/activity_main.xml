@@ -193,7 +193,7 @@
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_person_black_24dp" />
+                android:src="@drawable/main_visit" />
         </LinearLayout>
 
         <LinearLayout
@@ -225,7 +225,7 @@
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_person_black_24dp" />
+                android:src="@drawable/main_notice" />
         </LinearLayout>
 
     </LinearLayout>
@@ -271,7 +271,7 @@
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_baseline_access_time_24" />
+                android:src="@drawable/main_enter" />
         </LinearLayout>
 
         <LinearLayout
@@ -303,7 +303,7 @@
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_person_black_24dp" />
+                android:src="@drawable/main_out" />
         </LinearLayout>
 
     </LinearLayout>
@@ -348,7 +348,7 @@
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_baseline_access_time_24" />
+                android:src="@drawable/main_youtube" />
         </LinearLayout>
 
         <LinearLayout
@@ -380,7 +380,7 @@
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_person_black_24dp" />
+                android:src="@drawable/ic_baseline_settings_24" />
         </LinearLayout>
 
     </LinearLayout>

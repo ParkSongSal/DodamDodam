@@ -189,6 +189,7 @@
                 android:textColor="@color/mainTextColor"
                 android:textSize="16sp" />
 
+
             <ImageView
                 android:id="@+id/visit_img"
                 android:layout_width="match_parent"
@@ -197,7 +198,7 @@
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_person_black_24dp" />
+                android:src="@drawable/main_visit" />
         </LinearLayout>
 
         <LinearLayout
@@ -229,7 +230,7 @@
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_person_black_24dp" />
+                android:src="@drawable/main_notice" />
         </LinearLayout>
 
     </LinearLayout>
@@ -275,7 +276,7 @@
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_baseline_access_time_24"
+                android:src="@drawable/main_enter"
                 tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
 
@@ -303,12 +304,12 @@
             <ImageView
                 android:id="@+id/leave_img"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_person_black_24dp" />
+                android:src="@drawable/main_out" />
         </LinearLayout>
 
     </LinearLayout>
@@ -352,8 +353,8 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_baseline_access_time_24" />
+                android:scaleType="centerInside"
+                android:src="@drawable/main_youtube" />
         </LinearLayout>
 
         <LinearLayout
@@ -377,6 +378,7 @@
                 android:textColor="@color/mainTextColor"
                 android:textSize="16sp" />
 
+
             <ImageView
                 android:id="@+id/setting_img"
                 android:layout_width="match_parent"
@@ -385,7 +387,7 @@
                 android:layout_marginBottom="12dp"
                 android:onClick="mOnClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_person_black_24dp" />
+                android:src="@drawable/ic_baseline_settings_24" />
         </LinearLayout>
 
     </LinearLayout>
