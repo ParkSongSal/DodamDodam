@@ -14,6 +14,7 @@ import com.example.dodamdodam.Visit.ResultVisit
 import com.example.dodamdodam.Visit.VisitAdminUserSelActivity
 import com.example.dodamdodam.utils.BackPressedForFinish
 import com.example.dodamdodam.utils.Common
+import com.example.dodamdodam.youtube.YoutubeMngActivity
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -133,12 +134,12 @@ class MainActivity : BaseActivity() {
             R.id.youtubeImg -> {
                 val a = "0_ppWFD1ba0"
                 /*TODO : admin 계정 임시 조치 */
-                if(loginId != "admin"){
+                if(loginId == "admin"){
                     startActivity(Intent(Intent.ACTION_VIEW)
                         .setData(Uri.parse("https://www.youtube.com/watch?v=$a"))
                         .setPackage("com.google.android.youtube"))
                 }else{
-                    Common.intentCommon(this@MainActivity, OutIntroduceActivity::class.java)
+                    Common.intentCommon(this@MainActivity, YoutubeMngActivity::class.java)
                 }
             }
 
