@@ -12,6 +12,7 @@ import com.example.dodamdodam.Introduce.OutIntroduceActivity
 import com.example.dodamdodam.Notice.NoticeListActivity
 import com.example.dodamdodam.Visit.ResultVisit
 import com.example.dodamdodam.Visit.VisitAdminUserSelActivity
+import com.example.dodamdodam.Visit.VisitParentCalendarActivity
 import com.example.dodamdodam.utils.BackPressedForFinish
 import com.example.dodamdodam.utils.Common
 import com.example.dodamdodam.youtube.YoutubeMngActivity
@@ -169,10 +170,10 @@ class MainActivity : BaseActivity() {
             R.id.visit_txt,
             R.id.visit_img -> {
                 /*TODO : admin 계정 임시 조치 */
-                if ("admin"!= loginId) {
+                if ("admin" == loginId) {
                     Common.intentCommon(this@MainActivity, VisitAdminUserSelActivity::class.java)
                 } else {
-                    //Common.intentCommon(this@MainActivity, VisitParentCalendarActivity::class.java)
+                    Common.intentCommon(this@MainActivity, VisitParentCalendarActivity::class.java)
                 }
             }
         }
