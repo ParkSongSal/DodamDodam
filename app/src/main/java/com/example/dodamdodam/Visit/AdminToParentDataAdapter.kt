@@ -62,7 +62,7 @@ open class AdminToParentDataAdapter(
         //val path: String = mData[position].path
         val path = ""
         Glide.with(context)
-            .load(R.drawable.logo)
+            .load(R.drawable.logo_2)
             .override(600, 300)
             .fitCenter()
             .into(viewHolder.img_view)

@@ -43,7 +43,7 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo_2" />
 
             <TextView
                 android:id="@+id/noDataTxt"

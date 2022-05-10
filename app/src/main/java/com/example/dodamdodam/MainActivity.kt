@@ -134,7 +134,8 @@ class MainActivity : BaseActivity() {
             R.id.youtubeImg -> {
                 val a = "0_ppWFD1ba0"
                 /*TODO : admin 계정 임시 조치 */
-                if(loginId == "admin"){
+                /*TODO : 등록한 Youtube 링크 불러오기 */
+                if(loginId != "admin"){
                     startActivity(Intent(Intent.ACTION_VIEW)
                         .setData(Uri.parse("https://www.youtube.com/watch?v=$a"))
                         .setPackage("com.google.android.youtube"))

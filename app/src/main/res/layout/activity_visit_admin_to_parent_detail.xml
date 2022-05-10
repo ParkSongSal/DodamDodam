@@ -278,7 +278,7 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/logo" />
+                        android:src="@drawable/logo_2" />
 
                     <TextView
                         android:id="@+id/noDataTxt"
