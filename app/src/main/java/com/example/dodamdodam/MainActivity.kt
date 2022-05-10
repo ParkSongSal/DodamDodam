@@ -107,13 +107,6 @@ class MainActivity : BaseActivity() {
 
         when (view.id) {
 
-            /* 앱 소개 */
-            /*R.id.intro_ll,
-            R.id.appIntro,
-            R.id.intro_img -> {
-                Common.intentCommon(this@MainActivity, AppIntroduceActivity::class.java)
-            }*/
-
             /* 입원 안내문 소개  */
 
             R.id.enter_ll,
@@ -129,12 +122,11 @@ class MainActivity : BaseActivity() {
                 Common.intentCommon(this@MainActivity, OutIntroduceActivity::class.java)
             }
 
-            /* TODO : 유튜브 소개*/
+            /* 유튜브 링크 연결 및 관리*/
             R.id.youtube_ll,
             R.id.youtubeTxt,
             R.id.youtubeImg -> {
                 val a = "0_ppWFD1ba0"
-                /*TODO : admin 계정 임시 조치 */
                 /*TODO : 등록한 Youtube 링크 불러오기 */
                 if(loginId != "admin"){
                     startActivity(Intent(Intent.ACTION_VIEW)
@@ -151,15 +143,8 @@ class MainActivity : BaseActivity() {
             R.id.setting_img -> {
                 Common.intentCommon(this@MainActivity, SettingActivity::class.java)
             }
-            /*
-            R.id.logoutImg -> {
-                Common.intentCommon(this@MainActivity, SettingActivity::class.java)
-                finish()
-            }
 
-            */
             /* 공지사항 */
-
             R.id.notice_ll,
             R.id.notice_txt,
             R.id.notice_img -> {
@@ -169,7 +154,7 @@ class MainActivity : BaseActivity() {
             R.id.visit_ll,
             R.id.visit_txt,
             R.id.visit_img -> {
-                /*TODO : admin 계정 임시 조치 */
+
                 if ("admin" == loginId) {
                     Common.intentCommon(this@MainActivity, VisitAdminUserSelActivity::class.java)
                 } else {
