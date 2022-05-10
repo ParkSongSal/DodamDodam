@@ -13,7 +13,7 @@ class SundayDecorator : DayViewDecorator {
 
     override fun shouldDecorate(day: CalendarDay?): Boolean {
         day?.copyTo(calendar)
-        var weekDay = calendar.get(Calendar.DAY_OF_WEEK)
+        val weekDay = calendar.get(Calendar.DAY_OF_WEEK)
         return weekDay == Calendar.SUNDAY
     }
 

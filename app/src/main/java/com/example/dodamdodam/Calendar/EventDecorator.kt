@@ -6,14 +6,12 @@ import com.prolificinteractive.materialcalendarview.DayViewFacade
 import com.prolificinteractive.materialcalendarview.spans.DotSpan
 import java.util.*
 
-class EventDecorator : DayViewDecorator {
+class EventDecorator(var color: Int, dates: Collection<CalendarDay>) : DayViewDecorator {
 
-    var color : Int
     var dates : HashSet<CalendarDay>? = null
     val calendar = Calendar.getInstance()
 
-    constructor(color : Int, dates : Collection<CalendarDay>){
-        this.color = color
+    init {
         this.dates = HashSet(dates)
     }
 

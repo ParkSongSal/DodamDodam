@@ -18,6 +18,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Visit.VisitUserDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".Visit.VisitParentCalendarActivity"
             android:exported="false" />
         <activity

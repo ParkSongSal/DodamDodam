@@ -95,7 +95,7 @@ class VisitParentCalendarActivity : BaseActivity() {
 
         detailBtn.setOnClickListener{
 
-            //intent = Intent(this@VisitParentCalendarActivity, VisitUserDetailActivity::class.java)
+            intent = Intent(this@VisitParentCalendarActivity, VisitUserDetailActivity::class.java)
 
             val resultVisit : ResultVisit = detailAry[0]
 
