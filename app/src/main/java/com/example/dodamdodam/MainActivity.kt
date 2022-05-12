@@ -142,6 +142,7 @@ class MainActivity : BaseActivity() {
             R.id.setting_txt,
             R.id.setting_img -> {
                 Common.intentCommon(this@MainActivity, SettingActivity::class.java)
+                finish()
             }
 
             /* 공지사항 */
