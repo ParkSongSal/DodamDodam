@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import com.example.dodamdodam.Introduce.AppIntroduceActivity
@@ -60,8 +61,11 @@ class MainActivity : BaseActivity() {
     fun getBabyInfo(loginId: String) {
         if(loginId == "admin"){
             loginTxt.text = "메인"
-            babyNameTxt.text = "관리자님"
-            babyBirthDateTxt.text = "환영합니다."
+            babyNameTxt.text = "관리자님 환영합니다!"
+            babyBirthDateTxt.visibility = View.GONE
+            babyNumTxt.visibility = View.GONE
+            babyBirthTimeTxt.visibility = View.GONE
+
         }else{
             val loginIdPart = RequestBody.create(MultipartBody.FORM, loginId)
 

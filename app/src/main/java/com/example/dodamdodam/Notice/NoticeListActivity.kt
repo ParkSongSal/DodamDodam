@@ -55,7 +55,7 @@ class NoticeListActivity : BaseActivity() {
 
         loginId = setting.getString("loginId", "").toString()
 
-        if (loginId != "admin") {
+        if (loginId == "admin") {
             fab.visibility = View.VISIBLE
             // 관리자만 수정 가능
             fab.setOnClickListener {
