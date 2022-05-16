@@ -109,7 +109,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/mainTextBoldColor"
-                        android:text="홍길동"
                         android:textSize="16sp" />
 
                     <TextView
@@ -135,7 +134,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/mainTextBoldColor"
-                        android:text="yyyy년 mm월 dd일"
                         android:textSize="15sp" />
 
                     <TextView
@@ -143,7 +141,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/mainTextBoldColor"
-                        android:text="00시 00분 출생"
                         android:textSize="15sp" />
                 </LinearLayout>
 
