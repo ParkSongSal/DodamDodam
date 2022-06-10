@@ -18,6 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <TextView
             android:id="@+id/appNameTxt"
             android:layout_width="wrap_content"
@@ -40,6 +41,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/appNameTxt"
             app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--
+        <ImageView
+            android:id="@+id/logoutImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:onClick="mOnClick"
+            android:src="@drawable/logo_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/appNameTxt"
+            app:layout_constraintTop_toTopOf="parent" />-->
     </LinearLayout>
 
 
