@@ -172,19 +172,20 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl"
         android:layout_centerHorizontal="true"
-        android:gravity="center"
         android:layout_marginTop="15dp"
+        android:gravity="center"
         android:onClick="mOnClick"
-        app:layout_constraintTop_toBottomOf="@id/rl"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl">
 
         <LinearLayout
             android:id="@+id/visit_ll"
             android:layout_width="150dp"
             android:layout_height="120dp"
             android:background="@drawable/border_card"
+            android:gravity="center"
             android:onClick="mOnClick"
             android:orientation="vertical">
 
@@ -192,8 +193,6 @@
                 android:id="@+id/visit_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
                 android:onClick="mOnClick"
                 android:text="면회"
                 android:textColor="@color/mainTextColor"
@@ -201,12 +200,10 @@
 
             <ImageView
                 android:id="@+id/visit_img"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="12dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:onClick="mOnClick"
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:src="@drawable/main_visit" />
         </LinearLayout>
 
@@ -217,6 +214,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/border_card"
+            android:gravity="center"
             android:onClick="mOnClick"
             android:orientation="vertical">
 
@@ -225,7 +223,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="12dp"
                 android:onClick="mOnClick"
                 android:text="공지사항"
                 android:textColor="@color/mainTextColor"
@@ -233,12 +230,10 @@
 
             <ImageView
                 android:id="@+id/notice_img"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="12dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:onClick="mOnClick"
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:src="@drawable/main_notice" />
         </LinearLayout>
 
@@ -250,19 +245,20 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl"
         android:layout_centerHorizontal="true"
-        android:gravity="center"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:onClick="mOnClick"
-        app:layout_constraintTop_toBottomOf="@id/ll1"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll1">
 
         <LinearLayout
             android:id="@+id/enter_ll"
             android:layout_width="150dp"
             android:layout_height="120dp"
             android:background="@drawable/border_card"
+            android:gravity="center"
             android:onClick="mOnClick"
             android:orientation="vertical">
 
@@ -270,8 +266,6 @@
                 android:id="@+id/enterTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
                 android:onClick="mOnClick"
                 android:text="입원"
                 android:textColor="@color/mainTextColor"
@@ -279,12 +273,10 @@
 
             <ImageView
                 android:id="@+id/enter_img"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="12dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:onClick="mOnClick"
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:src="@drawable/main_enter" />
         </LinearLayout>
 
@@ -295,6 +287,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/border_card"
+            android:gravity="center"
             android:onClick="mOnClick"
             android:orientation="vertical">
 
@@ -302,8 +295,6 @@
                 android:id="@+id/leave_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
                 android:onClick="mOnClick"
                 android:text="퇴원"
                 android:textColor="@color/mainTextColor"
@@ -311,12 +302,10 @@
 
             <ImageView
                 android:id="@+id/leave_img"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="12dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:onClick="mOnClick"
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:src="@drawable/main_out" />
         </LinearLayout>
 
@@ -327,19 +316,20 @@
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:gravity="center"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:onClick="mOnClick"
-        app:layout_constraintTop_toBottomOf="@id/ll2"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll2">
 
         <LinearLayout
             android:id="@+id/youtube_ll"
             android:layout_width="150dp"
             android:layout_height="120dp"
             android:background="@drawable/border_card"
+            android:gravity="center"
             android:onClick="mOnClick"
             android:orientation="vertical">
 
@@ -347,8 +337,6 @@
                 android:id="@+id/youtubeTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
                 android:onClick="mOnClick"
                 android:text="유튜브"
                 android:textColor="@color/mainTextColor"
@@ -356,12 +344,10 @@
 
             <ImageView
                 android:id="@+id/youtubeImg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="12dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:onClick="mOnClick"
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:src="@drawable/main_youtube" />
         </LinearLayout>
 
@@ -372,6 +358,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/border_card"
+            android:gravity="center"
             android:onClick="mOnClick"
             android:orientation="vertical">
 
@@ -379,8 +366,6 @@
                 android:id="@+id/setting_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
                 android:onClick="mOnClick"
                 android:text="설정"
                 android:textColor="@color/mainTextColor"
@@ -388,12 +373,10 @@
 
             <ImageView
                 android:id="@+id/setting_img"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="12dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:onClick="mOnClick"
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_baseline_settings_24" />
         </LinearLayout>
 
