@@ -2,6 +2,7 @@ package com.example.dodamdodam
 
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import com.example.dodamdodam.utils.Common
 
 /*
@@ -24,10 +25,18 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun startLoading() {
-        val handler = Handler()
-        handler.postDelayed({
+        //val handler = Handler()
+        /*handler.postDelayed({
             Common.intentCommon(this@SplashActivity, LoginActivity::class.java)
             finish()
-        }, 2000) // 2.5초후에 실행
+        }, 2000) // 2.5초후에 실행*/
+
+        /*
+        * Handler() deprecated 로 인한 코드 개선
+        * */
+        Handler(Looper.getMainLooper()).postDelayed({
+            Common.intentCommon(this@SplashActivity, LoginActivity::class.java)
+            finish()
+        }, 2000)
     }
 }
