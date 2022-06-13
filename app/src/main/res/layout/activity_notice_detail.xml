@@ -33,45 +33,14 @@
         </com.google.android.material.appbar.AppBarLayout>
 
 
-        <LinearLayout
-            android:id="@+id/subtitle_ll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/border_edit"
-            android:orientation="horizontal"
-            android:padding="10dp">
 
-            <TextView
-                android:id="@+id/userTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_person_black_24dp"
-                android:drawableLeft="@drawable/ic_person_black_24dp"
-                android:text="관리자"
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/dateTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:drawableStart="@drawable/ic_baseline_date_range_24"
-                android:drawableLeft="@drawable/ic_baseline_date_range_24"
-                android:text="2018-06-18 15:30"
-                android:textColor="@color/mainTextColor"
-                android:textSize="17sp" />
-
-        </LinearLayout>
 
         <HorizontalScrollView
             android:id="@+id/scroll_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
             android:fillViewport="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +58,40 @@
                 android:textSize="20sp" />
         </HorizontalScrollView>
 
+        <LinearLayout
+            android:id="@+id/subtitle_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/border_edit"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/userTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:drawablePadding="3dp"
+                android:text="관리자"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/dateTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:drawableStart="@drawable/ic_baseline_date_range_24"
+                android:drawableLeft="@drawable/ic_baseline_date_range_24"
+                android:drawablePadding="3dp"
+                android:text="2018-06-18"
+                android:textColor="@color/mainAccentColor"
+                android:textSize="15sp" />
+
+        </LinearLayout>
 
         <ScrollView
             android:id="@+id/scroll_content"

@@ -73,10 +73,12 @@ class NoticeDetailActivity : BaseActivity() {
             content = intent.getStringExtra("CONTENT")
             insertDate = intent.getStringExtra("DATE")
 
+            val formatDate = Common.formatDate(insertDate,"yyyy-MM-dd")
+
             titleTxt.text = title.toString()
             userTxt.text = writer.toString()
             contentTxt.text = content.toString()
-            dateTxt.text = insertDate.toString()
+            dateTxt.text = formatDate
 
             // 관리자만 수정, 삭제 가능
             if (loginId == "admin") {

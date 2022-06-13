@@ -54,6 +54,16 @@ object Common {
         return sdfNow.format(nowdate)
     }
 
+    // DateFormatting
+    fun formatDate(date: String?, format: String): String {
+
+        val tempDate = SimpleDateFormat(format)
+        var temDate: Date? = null
+        temDate = tempDate.parse(date)
+
+        return tempDate.format(temDate)
+    }
+
     fun formatTimeString(regTime: String): String {
         val tempDate = SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
         var temdate: Date? = null
