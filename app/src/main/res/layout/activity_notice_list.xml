@@ -30,19 +30,20 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
             android:layout_marginTop="10dp">
 
-            <EditText
-                android:id="@+id/EditTextFilter"
+
+            <com.example.dodamdodam.customview.edit.ClearEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:drawableEnd="@drawable/ic_search_black_24dp"
-                android:drawableRight="@drawable/ic_search_black_24dp"
-                android:hint="제목을 입력하세요"
+                android:id="@+id/EditTextFilter"
+                android:hint="제목을 입력하세요."
+                android:drawableStart="@drawable/ic_search_black_24dp"
+                android:drawableLeft="@drawable/ic_search_black_24dp"
+                android:textStyle="bold"/>
 
-                android:textStyle="bold" />
         </LinearLayout>
 
 
@@ -50,8 +51,8 @@
             android:id="@+id/recycle_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
             android:layout_marginBottom="20dp"
             android:background="@color/splash_bg"
             android:orientation="vertical"
