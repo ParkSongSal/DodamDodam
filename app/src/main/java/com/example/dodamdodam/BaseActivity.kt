@@ -155,6 +155,12 @@ abstract class BaseActivity : AppCompatActivity() {
                         "0" -> appIntroTxt.text = result[i].boardContent
                         "1" -> enterIntroTxt.text = result[i].boardContent
                         "2" -> outIntroTxt.text = result[i].boardContent
+                        "3" ->  {
+                            val youtubeLink = result[i].boardContent
+                            editor.putString("youtubeLink", youtubeLink)
+                            editor.apply()
+                        }
+
                     }
                 }
 

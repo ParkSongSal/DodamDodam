@@ -103,6 +103,8 @@ class MainActivity : BaseActivity() {
                     ).show()
                 }
             })
+
+            introduceList("3")
         }
 
     }
@@ -130,12 +132,20 @@ class MainActivity : BaseActivity() {
             R.id.youtube_ll,
             R.id.youtubeTxt,
             R.id.youtubeImg -> {
-                val a = "0_ppWFD1ba0"
-                /*TODO : 등록한 Youtube 링크 불러오기 */
                 if(loginId != "admin"){
-                    startActivity(Intent(Intent.ACTION_VIEW)
-                        .setData(Uri.parse("https://www.youtube.com/watch?v=$a"))
-                        .setPackage("com.google.android.youtube"))
+                    val youtubeLink = setting.getString("youtubeLink", "").toString()
+                    if(youtubeLink != ""){
+                        startActivity(Intent(Intent.ACTION_VIEW)
+                            .setData(Uri.parse("https://www.youtube.com/watch?v=$youtubeLink"))
+                            .setPackage("com.google.android.youtube"))
+                    }else{
+                        Toast.makeText(
+                            coxt,
+                            "연결된 유튜브 링크가 없습니다.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+
                 }else{
                     Common.intentCommon(this@MainActivity, YoutubeMngActivity::class.java)
                 }
