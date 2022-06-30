@@ -43,6 +43,8 @@ class YoutubeMngActivity : BaseActivity() {
         init(applicationContext)
 
         loginId = setting.getString("loginId", "").toString()
+        val youtubeLink = setting.getString("youtubeLink", "").toString()
+        youtubeLinkEdit.setText(youtubeLink)
 
         toolbar.setTitleTextColor(getColor(R.color.white))
         toolbar.title = "유튜브 링크 관리"

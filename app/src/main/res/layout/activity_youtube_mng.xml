@@ -36,7 +36,7 @@
         <LinearLayout
             android:id="@+id/subtitle_ll"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="200dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
@@ -59,7 +59,7 @@
                 android:background="@drawable/border_edit"
                 android:gravity="start|center"
                 android:orientation="horizontal"
-                android:padding="5dp">
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/infoTxt"
@@ -74,43 +74,45 @@
                     android:id="@+id/youtubeLinkEdit"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:textStyle="bold"
                     android:hint="0_ppWFD1ba0" />
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/btnLl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/updateBtn"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ripple_ok_btn"
+                    android:gravity="center"
+                    android:text="수정"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/youtubeLinkChk"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ripple_cancel_btn"
+                    android:gravity="center"
+                    android:text="링크 확인"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/btnLl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/updateBtn"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/ripple_ok_btn"
-                android:gravity="center"
-                android:text="수정"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/youtubeLinkChk"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/ripple_cancel_btn"
-                android:gravity="center"
-                android:text="링크 확인"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
