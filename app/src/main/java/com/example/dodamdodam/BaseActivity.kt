@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.pm.PackageInfo
 import android.os.Handler
 import android.util.Log
 import android.view.WindowManager
@@ -24,6 +25,7 @@ import retrofit2.Retrofit
 
 abstract class BaseActivity : AppCompatActivity() {
 
+    lateinit var packageInfo : PackageInfo
     var validate = false
     var loginId = ""
     var actGubun : String? = ""
@@ -67,6 +69,8 @@ abstract class BaseActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.outIntroTxt)
     }
     fun init(context: Context) {
+
+        packageInfo = applicationContext.packageManager.getPackageInfo(applicationContext.packageName, 0)
 
         coxt = context
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)

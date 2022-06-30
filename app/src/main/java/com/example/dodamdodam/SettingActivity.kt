@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.example.dodamdodam.Introduce.AppIntroduceActivity
 import com.example.dodamdodam.utils.Common
+import kotlinx.android.synthetic.main.activity_setting.*
 
 class SettingActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,10 @@ class SettingActivity : BaseActivity() {
         init(this@SettingActivity)
 
         loginId = setting.getString("loginId", "").toString()
+
+        val appVersion = packageInfo.versionName
+
+        versionTxt.text = "버전 : $appVersion"
     }
 
     fun mOnClick(view: View) {
