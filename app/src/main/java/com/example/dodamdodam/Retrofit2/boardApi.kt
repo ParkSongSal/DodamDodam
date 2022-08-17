@@ -1,6 +1,7 @@
 package com.example.dodamdodam.Retrofit2
 
 import com.example.dodamdodam.Notice.ResultNotice
+import com.example.dodamdodam.Visit.ResultVisit
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
@@ -45,6 +46,11 @@ interface boardApi {
                               @Part("updateId") updateId : RequestBody,
                               @Part("updateDate") updateDate : RequestBody) : Call<ResponseBody>
 
+
+    /* 소개문 이미지 가져오기 */
+    @Multipart
+    @POST("getIntroduceImg.php")
+    fun getIntroduceImg(@Part("boardGubun") boardGubun: RequestBody) : Call<List<ResultIntroduceImg>>
 
     /* 소개문 등록 / 수정 여부  */
     @Multipart

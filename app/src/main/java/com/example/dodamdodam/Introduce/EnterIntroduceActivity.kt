@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -13,6 +14,9 @@ import com.bumptech.glide.Glide
 import com.example.dodamdodam.BaseActivity
 import com.example.dodamdodam.MainActivity
 import com.example.dodamdodam.R
+import com.example.dodamdodam.Retrofit2.ResultIntroduce
+import com.example.dodamdodam.Retrofit2.ResultIntroduceImg
+import com.example.dodamdodam.Retrofit2.ResultModel
 import com.example.dodamdodam.Visit.VisitAdmintoParentListActivity
 import com.example.dodamdodam.utils.Common
 import com.example.dodamdodam.utils.FileUtils
@@ -41,8 +45,8 @@ class EnterIntroduceActivity : BaseActivity() {
         setSupportActionBar(toolbar)
 
         init(applicationContext)
-        introduceValidate("1")  // 입원 안내문
-
+        //introduceValidate("1")  // 입원 안내문
+        getIntroduceImg("1")
         setting = getSharedPreferences("setting", MODE_PRIVATE)
         editor = setting.edit()
         editor.apply()
@@ -53,6 +57,7 @@ class EnterIntroduceActivity : BaseActivity() {
         if(loginId == "admin"){
             saveCardView.visibility = View.VISIBLE
             imageSelectCardView.visibility = View.VISIBLE
+            updateDateCardView.visibility = View.GONE
             // 관리자만 수정 가능
             modifyBtn.setOnClickListener {
                 Handler().postDelayed(Runnable {
@@ -73,6 +78,7 @@ class EnterIntroduceActivity : BaseActivity() {
                 finish()
             }*/
         }else{
+            updateDateCardView.visibility = View.VISIBLE
             saveCardView.visibility = View.GONE
             imageSelectCardView.visibility = View.GONE
         }
@@ -87,6 +93,38 @@ class EnterIntroduceActivity : BaseActivity() {
 
     }
 
+    private fun getIntroduceImg(boardGubun : String){
+        val boardGubunPart = RequestBody.create(MultipartBody.FORM, boardGubun)
+
+        mBoardApi.getIntroduceImg(boardGubunPart).enqueue(object : Callback<List<ResultIntroduceImg>> {
+            override fun onResponse(call: Call<List<ResultIntroduceImg>>, response: Response<List<ResultIntroduceImg>>) {
+
+                //정상 결과
+                val result: List<ResultIntroduceImg>? = response.body()
+                for (i in result!!.indices) {
+
+                    updateDateTxt.text = "관리자  " + result[i].update_date
+
+
+                    Glide.with(applicationContext)
+                        .load(result[i].path)
+                        .fitCenter()
+                        .into(enterImg)
+                }
+
+            }
+
+            override fun onFailure(call: Call<List<ResultIntroduceImg>>, t: Throwable) {
+                validate = false
+                // 네트워크 문제
+                Toast.makeText(
+                    coxt,
+                    "데이터 접속 상태를 확인 후 다시 시도해주세요.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
+    }
 
     private fun updateEnterIntroduce(){
 
