@@ -61,10 +61,6 @@ abstract class BaseActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.appIntroTxt)
     }
 
-
-    val outIntroTxt: TextView by lazy {
-        findViewById<TextView>(R.id.outIntroTxt)
-    }
     fun init(context: Context) {
 
         packageInfo = applicationContext.packageManager.getPackageInfo(applicationContext.packageName, 0)
@@ -143,7 +139,6 @@ abstract class BaseActivity : AppCompatActivity() {
                 call: Call<List<ResultIntroduce>>,
                 response: Response<List<ResultIntroduce>>
             ) {
-
 
                 //정상 결과
                 val result: List<ResultIntroduce>? = response.body()

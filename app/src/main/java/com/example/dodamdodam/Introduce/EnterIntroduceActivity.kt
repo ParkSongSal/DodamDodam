@@ -66,17 +66,6 @@ class EnterIntroduceActivity : BaseActivity() {
                 }, 2000) // 0.5초 정도 딜레이를 준 후 시작
 
             }
-
-            /*modifyBtn.setOnClickListener{
-                var intent = Intent(this@EnterIntroduceActivity, AppIntroduceModifyActivity::class.java)
-                intent.putExtra("boardGubun", "1")
-                intent.putExtra("actGubun", actGubun)
-                if(actGubun == "update"){
-                    //intent.putExtra("content",enterIntroTxt.text)
-                }
-                startActivity(intent)
-                finish()
-            }*/
         }else{
             updateDateCardView.visibility = View.VISIBLE
             saveCardView.visibility = View.GONE
