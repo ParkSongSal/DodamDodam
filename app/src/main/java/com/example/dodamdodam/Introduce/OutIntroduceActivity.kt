@@ -111,7 +111,7 @@ class OutIntroduceActivity : BaseActivity() {
 
     private fun updateEnterIntroduce(){
 
-        val boardGubun = "1"    // 1 : 입원, 2: 퇴원
+        val boardGubun = "2"    // 1 : 입원, 2: 퇴원
         val updateId = loginId
         val updateDate = Common.nowDate("yyyy-MM-dd HH:mm:ss")
 
