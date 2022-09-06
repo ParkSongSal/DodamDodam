@@ -1,7 +1,10 @@
 package com.example.dodamdodam.Retrofit2
 
 import com.example.dodamdodam.Notice.ResultNotice
+import com.example.dodamdodam.Visit.ResultVisit
+import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Multipart
 import retrofit2.http.POST
@@ -25,6 +28,7 @@ interface boardApi {
                            @Part("updateId") updateId : RequestBody,
                            @Part("updateDate") updateDate : RequestBody) : Call<ResultModel>
 
+
     /* 소개문 수정*/
     @Multipart
     @POST("introduce_modify.php")
@@ -33,6 +37,20 @@ interface boardApi {
                            @Part("updateId") updateId : RequestBody,
                            @Part("updateDate") updateDate : RequestBody) : Call<ResultModel>
 
+    /* 소개문 이미지 등록*/
+    @Multipart
+    @POST("introduce_img.php")
+    fun introduceImgUpdate(@Part("boardGubun") boardGubun : RequestBody,
+                              @Part image: MultipartBody.Part,
+                              @Part("originalPath1") originalPath : RequestBody?,
+                              @Part("updateId") updateId : RequestBody,
+                              @Part("updateDate") updateDate : RequestBody) : Call<ResponseBody>
+
+
+    /* 소개문 이미지 가져오기 */
+    @Multipart
+    @POST("getIntroduceImg.php")
+    fun getIntroduceImg(@Part("boardGubun") boardGubun: RequestBody) : Call<List<ResultIntroduceImg>>
 
     /* 소개문 등록 / 수정 여부  */
     @Multipart

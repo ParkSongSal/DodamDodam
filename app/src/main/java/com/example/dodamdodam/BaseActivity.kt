@@ -61,13 +61,6 @@ abstract class BaseActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.appIntroTxt)
     }
 
-    val enterIntroTxt: TextView by lazy {
-        findViewById<TextView>(R.id.enterIntroTxt)
-    }
-
-    val outIntroTxt: TextView by lazy {
-        findViewById<TextView>(R.id.outIntroTxt)
-    }
     fun init(context: Context) {
 
         packageInfo = applicationContext.packageManager.getPackageInfo(applicationContext.packageName, 0)
@@ -147,7 +140,6 @@ abstract class BaseActivity : AppCompatActivity() {
                 response: Response<List<ResultIntroduce>>
             ) {
 
-
                 //정상 결과
                 val result: List<ResultIntroduce>? = response.body()
 
@@ -157,8 +149,8 @@ abstract class BaseActivity : AppCompatActivity() {
 
                     when (boardGb) {
                         "0" -> appIntroTxt.text = result[i].boardContent
-                        "1" -> enterIntroTxt.text = result[i].boardContent
-                        "2" -> outIntroTxt.text = result[i].boardContent
+                        //"1" -> enterIntroTxt.text = result[i].boardContent
+                       // "2" -> outIntroTxt.text = result[i].boardContent
                         "3" ->  {
                             val youtubeLink = result[i].boardContent
                             editor.putString("youtubeLink", youtubeLink)
