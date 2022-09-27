@@ -14,6 +14,7 @@ import com.example.dodamdodam.utils.Common
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class RegisterActivity : BaseActivity() {
 
@@ -114,8 +115,12 @@ class RegisterActivity : BaseActivity() {
         babyBirthDate.onFocusChangeListener =
             View.OnFocusChangeListener { view, hasFocus ->
                 if (hasFocus) {
+                    val currentDate = Calendar.getInstance()
+                    val mYear = currentDate.get(Calendar.YEAR)
+                    val mMonth = currentDate.get(Calendar.MONTH)
+                    val mDay = currentDate.get(Calendar.DATE)
                     //  .. 포커스시
-                    val dialog = DatePickerDialog(this, dateCallbackMethod, 2021, 6, 10)
+                    val dialog = DatePickerDialog(this, dateCallbackMethod, mYear, mMonth, mDay)
 
                     dialog.show()
                 } else {
