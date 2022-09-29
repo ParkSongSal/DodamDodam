@@ -23,7 +23,7 @@
                 android:id="@+id/delImage"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/deleteiconblack2" />
+                android:src="@drawable/ic_baseline_close_24" />
         </RelativeLayout>
 
         <RelativeLayout
