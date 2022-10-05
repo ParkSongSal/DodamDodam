@@ -95,8 +95,6 @@ class LoginActivity : BaseActivity() {
                     editor.putString("loginId", userId)
                     editor.apply()
 
-                    progressDialog.dismiss()
-
                     //로그인 성공
                     startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                     finish()
@@ -107,6 +105,7 @@ class LoginActivity : BaseActivity() {
                     Toast.makeText(this@LoginActivity, "입력하신 정보를 다시 확인바랍니다.", Toast.LENGTH_SHORT)
                         .show()
                 }
+                progressDialog.dismiss()
             }
 
             override fun onFailure(call: retrofit2.Call<ResultModel>, t: Throwable) {
