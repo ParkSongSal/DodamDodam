@@ -9,6 +9,7 @@ import android.os.Handler
 import android.view.View
 import android.widget.Toast
 import com.psmStudio.dodamdodam.Introduce.AppIntroduceActivity
+import com.psmStudio.dodamdodam.Retrofit2.ResultModel
 import com.psmStudio.dodamdodam.utils.Common
 import kotlinx.android.synthetic.main.activity_setting.*
 import retrofit2.Callback
