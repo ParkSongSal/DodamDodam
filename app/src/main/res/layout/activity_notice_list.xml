@@ -35,7 +35,7 @@
             android:layout_marginTop="10dp">
 
 
-            <com.example.dodamdodam.customview.edit.ClearEditText
+            <com.psmStudio.dodamdodam.customview.edit.ClearEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/EditTextFilter"

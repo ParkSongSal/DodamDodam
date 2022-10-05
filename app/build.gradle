@@ -9,7 +9,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.dodamdodam"
+        applicationId "com.psmStudio.dodamdodam"
         minSdk 26
         targetSdk 31
         versionCode 1
