@@ -2,7 +2,10 @@ package com.example.dodamdodam
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.Toast
 import com.example.dodamdodam.Introduce.AppIntroduceActivity
@@ -77,7 +80,13 @@ class SettingActivity : BaseActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else {
-                            UnRegister()
+                            progressDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                            progressDialog.show()
+                            Handler().postDelayed(Runnable {
+                                UnRegister()
+                                //여기에 딜레이 후 시작할 작업들을 입력
+                            }, 2000) // 0.5초 정도 딜레이를 준 후 시작
+
                         }
                     })
                     .setNegativeButton(
@@ -138,9 +147,11 @@ class SettingActivity : BaseActivity() {
                     Toast.makeText(this@SettingActivity, "잠시 후 다시 확인바랍니다.", Toast.LENGTH_SHORT)
                         .show()
                 }
+                progressDialog.dismiss()
             }
 
             override fun onFailure(call: retrofit2.Call<ResultModel>, t: Throwable) {
+                progressDialog.dismiss()
                 // 네트워크 문제
                 Toast.makeText(
                     this@SettingActivity,
