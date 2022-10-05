@@ -55,4 +55,9 @@ interface userApi {
                      @Query("babyBirthTime") babyBirthTime : String,
                      @Query("regDate") regDate : String) : Call<ResultModel>
 
+    /* 회원 탈퇴 */
+    @GET("user_Withdrawal.php")
+    fun userWithDrawal(@Query("userId") loginId : String) : Call<ResultModel>
+
+
 }

@@ -6,8 +6,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.dodamdodam.Introduce.AppIntroduceActivity
+import com.example.dodamdodam.Retrofit2.ResultModel
 import com.example.dodamdodam.utils.Common
 import kotlinx.android.synthetic.main.activity_setting.*
+import retrofit2.Callback
+import retrofit2.Response
 
 class SettingActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,9 +77,8 @@ class SettingActivity : BaseActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else {
-                            Logout()
+                            UnRegister()
                         }
-                        Toast.makeText(applicationContext, "로그아웃되었습니다", Toast.LENGTH_SHORT).show()
                     })
                     .setNegativeButton(
                         "아니오",
@@ -120,9 +122,33 @@ class SettingActivity : BaseActivity() {
         finish()
     }
 
-    // TODO : 회원탈퇴
+    // 회원 탈퇴
     private fun UnRegister(){
+        mUserApi.userWithDrawal(loginId).enqueue(object : Callback<ResultModel> {
+            override fun onResponse(
+                call: retrofit2.Call<ResultModel>,
+                response: Response<ResultModel>
+            ) {
+                if ("success" == response.body()?.result) { // 회원 탈퇴 성공
+                    startActivity(Intent(this@SettingActivity, LoginActivity::class.java))
+                    finish()
+                    Toast.makeText(this@SettingActivity, "$loginId 님 회원탈퇴 요청이 정상 처리되었습니다.", Toast.LENGTH_SHORT)
+                        .show()
+                } else {  // 탈퇴 실패
+                    Toast.makeText(this@SettingActivity, "잠시 후 다시 확인바랍니다.", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
 
+            override fun onFailure(call: retrofit2.Call<ResultModel>, t: Throwable) {
+                // 네트워크 문제
+                Toast.makeText(
+                    this@SettingActivity,
+                    "데이터 접속 상태를 확인 후 다시 시도해주세요.",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
     }
 
     //뒤로가기 종료버튼
