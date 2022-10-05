@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="#7E6ABAC8"
-    tools:context=".SplashActivity">
+    tools:context="com.psmStudio.dodamdodam.SplashActivity">
 
 
     <LinearLayout

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Visit.VisitParentCalendarActivity">
+    tools:context="com.psmStudio.dodamdodam.Visit.VisitParentCalendarActivity">
 
     <LinearLayout
         android:id="@+id/ll"

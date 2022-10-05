@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".Notice.NoticeInsertActivity">
+    tools:context="com.psmStudio.dodamdodam.Notice.NoticeInsertActivity">
 
     <LinearLayout
         android:id="@+id/contentLL"

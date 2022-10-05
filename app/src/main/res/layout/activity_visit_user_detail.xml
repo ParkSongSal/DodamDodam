@@ -7,7 +7,7 @@
     android:background="@color/mainColor"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".Visit.VisitUserDetailActivity">
+    tools:context="com.psmStudio.dodamdodam.Visit.VisitUserDetailActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
