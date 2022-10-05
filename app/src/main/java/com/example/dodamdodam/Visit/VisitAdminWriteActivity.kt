@@ -5,9 +5,12 @@ import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +31,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
+import java.util.*
 
 class VisitAdminWriteActivity : BaseActivity() {
 
@@ -52,7 +56,7 @@ class VisitAdminWriteActivity : BaseActivity() {
     private var uriList2 : MutableList<Uri> = mutableListOf()
 
     private var mUriList: MutableList<Uri> = mutableListOf()
-
+    private var mVisitImageUri : Uri? = null
     var count = 0
     var position = 0
 
@@ -122,15 +126,20 @@ class VisitAdminWriteActivity : BaseActivity() {
         }
 
         insertBtn.setOnClickListener(View.OnClickListener {
-            adminWriteAct(saveGubun, mUriList)
+            adminWriteAct(saveGubun, mVisitImageUri)
         })
 
         this.InitializeListener()
 
         saveReserveDate.onFocusChangeListener = View.OnFocusChangeListener { view, hasFocus ->
             if (hasFocus) {
+                val currentDate = Calendar.getInstance()
+                val mYear = currentDate.get(Calendar.YEAR)
+                val mMonth = currentDate.get(Calendar.MONTH)
+                val mDay = currentDate.get(Calendar.DATE)
+
                 //  .. 포커스시
-                val dialog = DatePickerDialog(this, dateCallbackMethod, 2021, 6, 10)
+                val dialog = DatePickerDialog(this, dateCallbackMethod, mYear, mMonth, mDay)
 
                 dialog.show()
             } else {
@@ -156,7 +165,11 @@ class VisitAdminWriteActivity : BaseActivity() {
             }
         }
     }
-    private fun adminWriteAct(saveGubun: Int, filePath: MutableList<Uri>?) {
+    private fun adminWriteAct(saveGubun: Int, filePath: Uri?) {
+
+        progressDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        progressDialog.show()
+
         var tempYn: String = "N"
         var tempYnPart : RequestBody? = null
 
@@ -206,7 +219,55 @@ class VisitAdminWriteActivity : BaseActivity() {
         val updateIdPart = RequestBody.create(MultipartBody.FORM, loginId)
         val updateDatePart = RequestBody.create(MultipartBody.FORM, date)
 
-        when(filePath?.size){
+        val originalPath = RequestBody.create(MultipartBody.FORM, filePath.toString())
+
+        if(filePath != null){
+
+            val f1: File? = FileUtils.getFile(this@VisitAdminWriteActivity, filePath)
+            val imagePart = RequestBody.create(MediaType.parse("multipart/form-data"), f1)
+            val file1 = MultipartBody.Part.createFormData("image[]", f1?.name, imagePart)
+
+            call = mVisitApi.toParentInsert(
+                parentIdPart,
+                parentNamePart,
+                null,
+                babyWeightPart,
+                babyLactationPart,
+                babyRequireItemPart,
+                babyEtcPart,
+                writeDatePart,
+                tempYnPart,
+                reserveDatePart,
+                file1,
+                null,
+                null,
+                originalPath,
+                null,
+                null,
+                insertIdPart,
+                insertDatePart,
+                updateIdPart,
+                updateDatePart
+            )
+        }else{
+            call = mVisitApi.toParentInsertNoImage(
+                parentIdPart,
+                parentNamePart,
+                null,
+                babyWeightPart,
+                babyLactationPart,
+                babyRequireItemPart,
+                babyEtcPart,
+                writeDatePart,
+                tempYnPart,
+                reserveDatePart,
+                insertIdPart,
+                insertDatePart,
+                updateIdPart,
+                updateDatePart
+            )
+        }
+        /*when(filePath?.size){
             0 -> {
                 call = mVisitApi.toParentInsertNoImage(
                     parentIdPart,
@@ -331,7 +392,7 @@ class VisitAdminWriteActivity : BaseActivity() {
                     updateDatePart
                 )
             }
-        }
+        }*/
 
 
 
@@ -354,16 +415,21 @@ class VisitAdminWriteActivity : BaseActivity() {
                         .setNegativeButton("확인", null)
                     dlg.show()
                 }
-
+                progressDialog.dismiss()
             }
 
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+
+                progressDialog.dismiss()
                 // 네트워크 문제
                 Toast.makeText(
                     this@VisitAdminWriteActivity,
                     "데이터 접속 상태를 확인 후 다시 시도해주세요.",
                     Toast.LENGTH_SHORT
                 ).show()
+                Log.d("TAG", "writeError message : ${t.message} " )
+                Log.d("TAG", "writeError : ${call.toString()} " )
+                Log.d("TAG", "writeError : ${t.localizedMessage} " )
             }
         })
     }
@@ -435,10 +501,8 @@ class VisitAdminWriteActivity : BaseActivity() {
 
     fun onClick(view: View) {
         when (view.id) {
-            /* 앱 소개 */
-            R.id.imgRL,
-            R.id.cameraIcon,
-            R.id.imageTxtCount -> {
+            /* 이미지 선택 */
+            R.id.imageView_1 -> {
                 selectImage()
             }
 
@@ -453,7 +517,6 @@ class VisitAdminWriteActivity : BaseActivity() {
         intent.type = "image/*"
 
         // allowing multiple image to be selected
-        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
         intent.action = Intent.ACTION_GET_CONTENT
         startActivityForResult(
             Intent.createChooser(intent, "Select Picture"),
@@ -461,7 +524,29 @@ class VisitAdminWriteActivity : BaseActivity() {
         )
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_MULTIPLE && resultCode == RESULT_OK && null != data) {
+           data.data.let{
+               val imageUrl = data.data
+               mVisitImageUri = imageUrl
+               if (imageUrl != null) {
+                   setImage(imageUrl)
+               }
+           }
+        }else{
+            Toast.makeText(this, "이미지를 선택하지 않으셨습니다.", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun setImage(imageUri : Uri){
+        Glide.with(applicationContext)
+            .load(imageUri)
+            .centerCrop()
+            .into(imageView_1)
+    }
+
+    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PICK_IMAGE_MULTIPLE && resultCode == RESULT_OK && null != data) {
             // Get the Image from data
@@ -487,8 +572,8 @@ class VisitAdminWriteActivity : BaseActivity() {
         } else {
             Toast.makeText(this, "이미지를 선택하지 않으셨습니다.", Toast.LENGTH_LONG).show()
         }
-    }
-    private fun setImage(imageUri : Uri){
+    }*/
+    /*private fun setImage(imageUri : Uri){
         val inflater =
             getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val statLayoutItem = inflater.inflate(R.layout.addimage, null) as LinearLayout
@@ -513,6 +598,6 @@ class VisitAdminWriteActivity : BaseActivity() {
             .into(addImg)
         imageLinear.addView(statLayoutItem)
         imageTxtCount.text = "$count/3"
-    }
+    }*/
 
 }

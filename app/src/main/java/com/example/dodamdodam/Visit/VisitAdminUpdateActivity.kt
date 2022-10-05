@@ -6,6 +6,8 @@ import android.app.TimePickerDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,6 +24,16 @@ import com.example.dodamdodam.utils.Common
 import com.example.dodamdodam.utils.FileUtils
 import com.github.siyamed.shapeimageview.RoundedImageView
 import kotlinx.android.synthetic.main.activity_visit_admin_update.*
+import kotlinx.android.synthetic.main.activity_visit_admin_update.babyEtcTxt
+import kotlinx.android.synthetic.main.activity_visit_admin_update.babyLactationTxt
+import kotlinx.android.synthetic.main.activity_visit_admin_update.babyRequireItemTxt
+import kotlinx.android.synthetic.main.activity_visit_admin_update.babyWeightTxt
+import kotlinx.android.synthetic.main.activity_visit_admin_update.imageView_1
+import kotlinx.android.synthetic.main.activity_visit_admin_update.reservLl
+import kotlinx.android.synthetic.main.activity_visit_admin_update.saveReserveDate
+import kotlinx.android.synthetic.main.activity_visit_admin_update.saveReserveTime
+import kotlinx.android.synthetic.main.activity_visit_admin_update.saveSpinner
+import kotlinx.android.synthetic.main.activity_visit_admin_write.*
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -42,6 +54,7 @@ class VisitAdminUpdateActivity : BaseActivity() {
 
     private var pathsList = emptyArray<String>()
     private var mUriList: MutableList<Uri> = mutableListOf()
+    private var mVisitImageUri : Uri? = null
 
 
     var count =0
@@ -101,6 +114,7 @@ class VisitAdminUpdateActivity : BaseActivity() {
                 if(pathList[i].contains("app_icon")) {
                     continue
                 }else{
+                    mVisitImageUri = Uri.parse(originalPathList[0])
                     mUriList.add(Uri.parse(originalPathList[i]))
                     count++
                     setImageUpdate(pathList[i], originalPathList[i])
@@ -183,21 +197,25 @@ class VisitAdminUpdateActivity : BaseActivity() {
                 }
             }
         //이미지 불러오기기
-        cameraIcon.setOnClickListener{
+        imageView_1.setOnClickListener{
             selectImage()
         }
 
         updateBtn.setOnClickListener {
 
+            progressDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            progressDialog.show()
             Handler().postDelayed(Runnable {
-                updateBoard(saveGubun, mUriList)
+                updateBoard(saveGubun, mVisitImageUri)
                 //여기에 딜레이 후 시작할 작업들을 입력
             }, 2000) // 0.5초 정도 딜레이를 준 후 시작
 
         }
     }
 
-    private fun updateBoard(saveGubun: Int, filePath : MutableList<Uri>?){
+    private fun updateBoard(saveGubun: Int, filePath : Uri?){
+
+
 
         val Seq = seq
         val User = loginId
@@ -245,7 +263,60 @@ class VisitAdminUpdateActivity : BaseActivity() {
             }
         }
 
-        when (filePath?.size) {
+        if(filePath != null){
+            var fileFormat : Uri? = null
+            var f1 : File?
+            if(filePath.toString().contains("(")){
+                val idx = filePath.toString().indexOf("(")
+                val path = filePath.toString().substring(0,idx)
+                fileFormat = Uri.parse("content$path")
+                f1 = FileUtils.getFile(this@VisitAdminUpdateActivity, fileFormat)
+            }else{
+                fileFormat = filePath
+                f1 = FileUtils.getFile(this@VisitAdminUpdateActivity, filePath)
+            }
+
+            val originalPath = RequestBody.create(MultipartBody.FORM, fileFormat.toString())
+
+            val imagePart = RequestBody.create(MediaType.parse("multipart/form-data"), f1!!)
+            val file1 = MultipartBody.Part.createFormData("image[]", f1.name, imagePart)
+
+
+            updateCall = mVisitApi.toParentUpdate(
+                seqPart,
+                parentIdPart,
+                null,
+                babyWeightPart,
+                babyLactationPart,
+                babyRequireItemPart,
+                babyEtcPart,
+                tempYnPart,
+                reserveDatePart,
+                file1,
+                null,
+                null,
+                originalPath,
+                null,
+                null,
+                updateIdPart,
+                updateDatePart
+            )
+        }else{
+            updateCall = mVisitApi.toParentUpdateNoImage(
+                seqPart,
+                parentIdPart,
+                null,
+                babyWeightPart,
+                babyLactationPart,
+                babyRequireItemPart,
+                babyEtcPart,
+                tempYnPart,
+                reserveDatePart,
+                updateIdPart,
+                updateDatePart
+            )
+        }
+        /*when (filePath?.size) {
             0 ->{
                 updateCall = mVisitApi.toParentUpdateNoImage(
                     seqPart,
@@ -427,7 +498,7 @@ class VisitAdminUpdateActivity : BaseActivity() {
                 )
             }
 
-        }
+        }*/
 
 
         updateCall.enqueue(object : Callback<ResponseBody?> {
@@ -449,12 +520,14 @@ class VisitAdminUpdateActivity : BaseActivity() {
                         .setNegativeButton("확인", null)
                     dlg.show()
                 }
+                progressDialog.dismiss()
             }
 
             override fun onFailure(
                 call: Call<ResponseBody?>,
                 t: Throwable
             ) {
+                progressDialog.dismiss()
                 Toast.makeText(
                     this@VisitAdminUpdateActivity,
                     "데이터 접속 상태를 확인 후 다시 시도해주세요.",
@@ -466,42 +539,11 @@ class VisitAdminUpdateActivity : BaseActivity() {
     }
 
     fun setImageUpdate(imagePath : String, uriPath : String){
-
-        val inflater2 =
-            getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val statLayoutItem2 =
-            inflater2.inflate(R.layout.addimage, null) as LinearLayout
-        val addImg: RoundedImageView = statLayoutItem2.findViewById(R.id.addImage)
-        val delImg =
-            statLayoutItem2.findViewById<ImageView>(R.id.delImage)
-
-        delImg.setOnClickListener {
-            if(pathList.contains(imagePath)){
-                val idx = imagePath.indexOf("(")
-                val fileIdx = imagePath.substring(idx+1, idx+2)
-
-                val idx2 = uriPath.indexOf("(")
-                val fileIdx2 = uriPath.substring(idx2+1, idx2+2)
-                if(fileIdx == fileIdx2){
-                    mUriList.remove(Uri.parse(uriPath))
-                }
-
-                pathList.remove(imagePath)
-                count--
-                imageLinear.removeView(statLayoutItem2)
-                imageTxtCount.text = "$count/3"
-                if(count == 0){
-                    mUriList.clear()
-                }
-            }
-        }
         Glide.with(applicationContext)
             .load(imagePath)
             .override(300, 300)
             .fitCenter()
-            .into(addImg)
-        imageLinear.addView(statLayoutItem2)
-        imageTxtCount.text = "$count/3"
+            .into(imageView_1)
     }
 
     override fun onBackPressed() {
@@ -528,7 +570,6 @@ class VisitAdminUpdateActivity : BaseActivity() {
         intent.type = "image/*"
 
         // allowing multiple image to be selected
-        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
         intent.action = Intent.ACTION_GET_CONTENT
         startActivityForResult(
             Intent.createChooser(intent, "Select Picture"),
@@ -540,59 +581,24 @@ class VisitAdminUpdateActivity : BaseActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == PICK_IMAGE_MULTIPLE && resultCode == RESULT_OK && null != data) {
-            // Get the Image from data
-            if (data.clipData != null) {
-                val cout = data.clipData!!.itemCount
-                if(cout > IMAGE_LIMIT){
-                    Toast.makeText(this, "이미지는 최대 3장까지 등록 가능합니다.", Toast.LENGTH_LONG).show()
-                    selectImage()
-                }else{
-                    for (i in 0 until cout) {
-                        ++count
-                        // adding imageuri in array
-                        val imageurl = data.clipData!!.getItemAt(i).uri
-                        mUriList.add(imageurl)
-                        setImage(imageurl)
-                    }
+            data.data.let{
+                val imageUrl = data.data
+                mVisitImageUri = imageUrl
+                if (imageUrl != null) {
+                    setImage(imageUrl)
                 }
-            } else {    // 이미지 1장인경우
-                count++
-                val imageurl = data.data
-                mUriList.add(imageurl!!)
-                setImage(imageurl)
             }
-        } else {
-            // show this if no image is selected
+        }else{
             Toast.makeText(this, "이미지를 선택하지 않으셨습니다.", Toast.LENGTH_LONG).show()
         }
     }
 
 
     private fun setImage(imageUri : Uri){
-        val inflater =
-            getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val statLayoutItem = inflater.inflate(R.layout.addimage, null) as LinearLayout
-        val addImg: RoundedImageView = statLayoutItem.findViewById(R.id.addImage)
-        val delImg =
-            statLayoutItem.findViewById<ImageView>(R.id.delImage)
-        delImg.setOnClickListener {
-
-            if(mUriList.contains(imageUri)){
-                mUriList.remove(imageUri)
-                count--
-                imageLinear.removeView(statLayoutItem)
-                imageTxtCount.text = "$count/3"
-            }
-
-        }
-
         Glide.with(applicationContext)
             .load(imageUri)
-            .override(300, 300)
-            .fitCenter()
-            .into(addImg)
-        imageLinear.addView(statLayoutItem)
-        imageTxtCount.text = "$count/3"
+            .centerCrop()
+            .into(imageView_1)
     }
 
     fun InitializeListener() {
